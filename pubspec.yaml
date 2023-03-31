@@ -38,6 +38,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.5
   google_fonts: ^4.0.3
+  flare_flutter: ^3.0.2
+  provider: ^6.0.5
+  shared_preferences: ^2.0.18
+  flutter_secure_storage: ^8.0.0
+  email_validator: ^2.1.17
+  lottie: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -64,7 +70,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/72AA6788-970C-4FE9-B81C-573ED6D94AB6.PNG
-  #   - images/a_dot_ham.jpeg
+    - assets/72049-red-car.json
+    - assets/logo-alone.png
+    # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

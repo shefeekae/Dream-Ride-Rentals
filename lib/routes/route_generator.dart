@@ -1,7 +1,8 @@
-import 'package:dream_ride_rentals/view/home_screen.dart';
+import 'package:dream_ride_rentals/view/auth_page.dart';
+import 'package:dream_ride_rentals/view/bottom_nav.dart';
+import 'package:dream_ride_rentals/view/login_or_register.dart';
 import 'package:dream_ride_rentals/view/login_screen.dart';
 import 'package:dream_ride_rentals/view/otp_screen.dart';
-import 'package:dream_ride_rentals/view/register_screen.dart';
 import 'package:dream_ride_rentals/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (context) => SplashScreen(),
+          builder: (context) => const SplashScreen(),
         );
       case '/otp':
         if (args is String) {
@@ -22,13 +23,17 @@ class RouteGenerator {
         }
         return _errrorRoute();
 
-      case '/login':
+      case '/loginOrRegister':
         return MaterialPageRoute(
-          builder: (context) => LoginScreen(),
+          builder: (context) => const LoginOrRegisterPage(),
         );
-      case '/home':
+      case '/bottomNav':
         return MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => const BottomNavigation(),
+        );
+      case '/auth':
+        return MaterialPageRoute(
+          builder: (context) => const AuthPage(),
         );
       default:
         return _errrorRoute();
@@ -41,7 +46,7 @@ class RouteGenerator {
         return Scaffold(
           appBar: AppBar(title: const Text('Error')),
           body: const Center(
-            child: Text('ERROR'),
+            child: Text('There is Some error in the routing'),
           ),
         );
       },

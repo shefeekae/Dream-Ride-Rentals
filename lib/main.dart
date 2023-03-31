@@ -1,8 +1,14 @@
+import 'package:dream_ride_rentals/providers/user_provider.dart';
 import 'package:dream_ride_rentals/routes/route_generator.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (_) => UserProvider(),
+    )
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

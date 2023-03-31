@@ -13,10 +13,13 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ActionChip(
       pressElevation: 5,
-      padding: const EdgeInsets.all(15),
-      labelStyle: const TextStyle(color: Colors.white),
-      backgroundColor: Colors.blue,
-      label: Text(label),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 135),
+      labelStyle: TextStyle(color: Colors.grey[100]),
+      backgroundColor: Colors.deepOrange,
+      label: Text(
+        label,
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+      ),
       onPressed: onPressed,
     );
   }

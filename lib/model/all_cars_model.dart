@@ -1,8 +1,10 @@
-// List<AllCarsModel> allCarsModelFromJson(String str) => List<AllCarsModel>.from(
-//     json.decode(str).map((x) => AllCarsModel.fromJson(x)));
+import 'dart:convert';
 
-// String allCarsModelToJson(List<AllCarsModel> data) =>
-//     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+List<AllCarsModel> allCarsModelFromJson(String str) => List<AllCarsModel>.from(
+    json.decode(str).map((x) => AllCarsModel.fromJson(x)));
+
+String allCarsModelToJson(List<AllCarsModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class AllCarsModel {
   AllCarsModel({
@@ -20,7 +22,7 @@ class AllCarsModel {
     required this.v,
   });
 
-  Image image;
+  ImageModel image;
   String id;
   String name;
   String description;
@@ -34,7 +36,7 @@ class AllCarsModel {
   int v;
 
   factory AllCarsModel.fromJson(Map<String, dynamic> json) => AllCarsModel(
-        image: Image.fromJson(json["image"]),
+        image: ImageModel.fromJson(json["image"]),
         id: json["_id"],
         name: json["name"],
         description: json["description"],
@@ -90,8 +92,8 @@ class BookedTimeSlot {
       };
 }
 
-class Image {
-  Image({
+class ImageModel {
+  ImageModel({
     required this.publicId,
     required this.url,
   });
@@ -99,7 +101,7 @@ class Image {
   String publicId;
   String url;
 
-  factory Image.fromJson(Map<String, dynamic> json) => Image(
+  factory ImageModel.fromJson(Map<String, dynamic> json) => ImageModel(
         publicId: json["public_id"],
         url: json["url"],
       );
