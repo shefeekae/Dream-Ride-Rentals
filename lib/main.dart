@@ -1,3 +1,4 @@
+import 'package:dream_ride_rentals/providers/all_cars_provider.dart';
 import 'package:dream_ride_rentals/providers/user_provider.dart';
 import 'package:dream_ride_rentals/routes/route_generator.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,10 @@ void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
       create: (_) => UserProvider(),
-    )
+    ),
+    ChangeNotifierProvider(
+      create: (_) => AllCarsProvider(),
+    ),
   ], child: const MyApp()));
 }
 

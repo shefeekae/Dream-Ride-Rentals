@@ -44,6 +44,8 @@ dependencies:
   flutter_secure_storage: ^8.0.0
   email_validator: ^2.1.17
   lottie: ^2.3.0
+  shimmer: ^2.0.0
+  page_transition: ^2.0.9
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:dream_ride_rentals/controller/register_controller.dart';
 import 'package:dream_ride_rentals/service/auth_service.dart';
 import 'package:dream_ride_rentals/validator/validation.dart';
+import 'package:dream_ride_rentals/widgets/color_ball.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/my_button.dart';
@@ -36,64 +37,85 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        height: size.height,
         decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
-                colors: [Colors.white, Color.fromARGB(255, 130, 199, 255)])),
+                colors: [
+              Colors.white,
+              //  Color.fromARGB(255, 2, 198, 243)
+              Color.fromARGB(255, 210, 252, 198)
+            ])),
         child: Form(
           key: _formKey,
           child: Stack(children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 100, left: 147),
-              child: Container(
-                height: 100,
-                width: 100,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      begin: Alignment.centerRight,
-                      end: Alignment.centerLeft,
-                      colors: [Colors.red, Colors.orange]),
-                  color: const Color.fromARGB(255, 217, 74, 13),
-                  borderRadius: BorderRadius.circular(90),
-                ),
+            Positioned(
+              left: size.width * 0.5,
+              top: size.height * 0.16,
+              child: const ColorBall(
+                begin: Alignment.centerRight,
+                end: Alignment.bottomLeft,
+                height: 70,
+                width: 70,
+                colors: [
+                  Color.fromARGB(255, 178, 250, 53),
+                  Color.fromARGB(255, 51, 71, 255),
+                ],
               ),
             ),
             Positioned(
-              left: 35,
-              top: 100,
-              child: Text(
-                "Drive your dreams with us! \nRegister now.",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.acme(fontSize: 30, color: Colors.cyan),
-                maxLines: 2,
+              left: size.width * 0.2,
+              top: size.height * 0.2,
+              child: const ColorBall(
+                begin: Alignment.centerRight,
+                end: Alignment.bottomLeft,
+                height: 150,
+                width: 150,
+                colors: [
+                  Color.fromARGB(255, 127, 239, 52),
+                  Color.fromARGB(255, 0, 149, 255)
+                ],
               ),
             ),
             Positioned(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              top: 180,
-              child: SingleChildScrollView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                reverse: true,
-                child: Container(
+              left: size.width * 0.4,
+              top: size.height * 0.3,
+              child: const ColorBall(
+                begin: Alignment.centerRight,
+                end: Alignment.bottomLeft,
+                height: 110,
+                width: 110,
+                colors: [
+                  Color.fromARGB(255, 45, 239, 223),
+                  Color.fromARGB(255, 0, 149, 255),
+                ],
+              ),
+            ),
+            ListView(
+              reverse: true,
+              physics: const BouncingScrollPhysics(),
+              children: [
+                Container(
                   // height: MediaQuery.of(context).size.height,
-                  constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height),
+                  padding: const EdgeInsets.only(top: 30),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(45),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(45),
+                        topRight: Radius.circular(45),
+                      ),
                       color: Colors.grey[200]!.withOpacity(0.5)),
                   child: Column(
                     children: [
-                      // Text(
-                      //   "Drive your dreams with us! Register now.",
-                      //   textAlign: TextAlign.center,
-                      //   style: GoogleFonts.acme(fontSize: 30),
-                      // ),
+                      Text(
+                        "Register now",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.b612(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                      ),
                       const SizedBox(
                         height: 20,
                       ),
@@ -174,11 +196,14 @@ class RegisterPage extends StatelessWidget {
                             ),
                           )
                         ],
+                      ),
+                      const SizedBox(
+                        height: 20,
                       )
                     ],
                   ),
                 ),
-              ),
+              ],
             ),
           ]),
         ),

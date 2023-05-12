@@ -125,7 +125,7 @@ class AuthService {
       user = userFromJson(userRes.body);
       userProvider.setUser(userRes.body);
     } catch (e) {
-      showSnackBar(context, e.toString());
+      showSnackBar(context, "Something went wrong");
     }
     return user;
   }

@@ -1,7 +1,5 @@
 import 'package:dream_ride_rentals/controller/otp_controller.dart';
-import 'package:dream_ride_rentals/validator/validation.dart';
 import 'package:dream_ride_rentals/widgets/my_button.dart';
-import 'package:dream_ride_rentals/widgets/my_textfield.dart';
 import 'package:dream_ride_rentals/widgets/otp_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,8 +58,14 @@ class OtpScreen extends StatelessWidget {
                         autofocus: false,
                         controller: _fieldTwo,
                       ),
-                      OtpTextField(controller: _fieldThree, autofocus: false),
-                      OtpTextField(controller: _fieldFour, autofocus: false)
+                      OtpTextField(
+                        controller: _fieldThree,
+                        autofocus: false,
+                      ),
+                      OtpTextField(
+                        controller: _fieldFour,
+                        autofocus: false,
+                      )
                     ],
                   ),
                   const SizedBox(

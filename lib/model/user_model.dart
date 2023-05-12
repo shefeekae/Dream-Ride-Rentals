@@ -26,16 +26,16 @@ class User {
   String? token;
 
   factory User.fromJson(Map<String, dynamic> json, [String? token]) => User(
-        pic: json["pic"],
-        isAdmin: json["isAdmin"],
-        id: json["_id"],
-        name: json["name"],
-        email: json["email"],
-        password: json["password"],
-        phoneNumber: json["phoneNumber"],
-        answer: json["answer"],
-        access: json["access"],
-        v: json["__v"],
+        pic: json["pic"] ?? "",
+        isAdmin: json["isAdmin"] ?? false,
+        id: json["_id"] ?? "",
+        name: json["name"] ?? "",
+        email: json["email"] ?? "",
+        password: json["password"] ?? "",
+        phoneNumber: json["phoneNumber"] ?? 0,
+        answer: json["answer"] ?? "",
+        access: json["access"] ?? false,
+        v: json["__v"] ?? 0,
       );
 
   Map<String, dynamic> toJson() => {

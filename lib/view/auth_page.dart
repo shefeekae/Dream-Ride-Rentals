@@ -1,7 +1,6 @@
 import 'package:dream_ride_rentals/service/auth_service.dart';
 import 'package:dream_ride_rentals/view/bottom_nav.dart';
 import 'package:dream_ride_rentals/view/login_or_register.dart';
-import 'package:dream_ride_rentals/view/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 

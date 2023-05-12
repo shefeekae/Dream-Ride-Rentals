@@ -24,16 +24,19 @@ class MyTextFormField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           labelText: hintText,
-          labelStyle: GoogleFonts.acme(fontSize: 15, color: Colors.black),
-          focusColor: Colors.grey[300],
-          fillColor: Colors.grey[200],
+          labelStyle: GoogleFonts.b612(
+              fontSize: 15,
+              color: const Color.fromARGB(255, 45, 45, 45),
+              fontWeight: FontWeight.normal),
+          fillColor: Colors.white,
           filled: true,
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
               borderSide: const BorderSide(color: Colors.white)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
-              borderSide: const BorderSide(color: Colors.black)),
+              borderSide:
+                  const BorderSide(color: Color.fromARGB(255, 213, 213, 213))),
           // hintText: hintText,
           // disabledBorder:
           //     OutlineInputBorder(borderRadius: BorderRadius.circular(8)),

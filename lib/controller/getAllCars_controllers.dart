@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:dream_ride_rentals/model/all_cars_model.dart';
 import 'package:dream_ride_rentals/service/auth_service.dart';
 
@@ -25,7 +24,7 @@ class GetAllCarsController {
     //     updatedAt: time,
     //     v: 0);
 
-    final respone = await auth.getAllCars(context);
-    return respone;
+    final carList = await auth.getAllCars(context);
+    return carList;
   }
 }
